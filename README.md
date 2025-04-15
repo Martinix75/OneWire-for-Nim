@@ -14,4 +14,6 @@ Pippo
   |                 |
   |                 |----- oneWire.nim
   |                 |----- oneWire_lib.pio
+  |----- build
+  |----- CMakeLists.txt
 ```
