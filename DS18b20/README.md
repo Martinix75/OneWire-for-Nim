@@ -14,3 +14,28 @@ In this example, the reading of the first device is set at 12 bits. Now to read 
 ```
 getTempC(numDev=0)
 ```
+Below is a small example:
+```nim
+import std/strformat
+  stdioInitAll()
+  sleepMs(1900)
+  echo("Init ds18d20..")
+  echo("Version Onew: ", onewireVer)
+  echo("Version DS18B20: ", ds18b20Ver)
+  var ds = ds1820Init(pio0, 15)
+  #-------------------------------------
+  ds.search(5)
+  ds.showaddress()
+  ds.setResolution(numDev=0, resolution=12)
+  ds.setResolution(numDev=1, resolution=12)
+  while true:
+    echo("-----------------------------")
+    echo("Temp1: ", ds.getTempC(numDev=0))
+    echo("Temp1 resolution: ", ds.getResolution(numDev=0))
+    echo("++++++++++++++++++++++++++++++")
+    sleepMs(4000)
+```
+For now, reading is only in degrees centigrade, for other systems the conversion must be done manually (but in the next versions it is not excluded that I put this option).
+
+# Attention! This library is still being developed!
+
