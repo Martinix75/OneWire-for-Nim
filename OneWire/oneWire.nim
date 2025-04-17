@@ -12,10 +12,10 @@ proc oneWireSmInit(pio: PioInstance; sm: uint; offset: uint; pinNum: uint; bitsP
 proc oneWireResetInstr(offset: uint):uint {.importC: "onewire_reset_instr".}
 {.pop.}
 
-let onewireVer* = "0.4.1"
+let onewireVer* = "0.4.2"
 
 type
-  OW* = ref object of RootObj #oggetto onewire ref (Ver0.4.0).
+  OW* = ref object # of RootObj #oggetto onewire ref (Ver0.4.0 eliminato RootBjg (Ver 0.4.2)).
     #onewireVer = "0.3.0" #versione libreria.
     pio: PioInstance
     sm: uint
