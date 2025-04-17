@@ -7,7 +7,7 @@ import /DEPS/oneWire
 let ds18b20Ver = "0.5.0" # vediamo che fare qui...
 
 type
-  Ds18b20 = object of OW
+  Ds18b20 = object
     ow: OW #strutta dati per usare onewire.
     dataDs: array[9, byte] #array contenete i dati mandati dal sensore.
     oneAddressDs: uint64 #memorizza un singolo indirizzo dei dispositivi.
